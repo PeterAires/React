@@ -1,10 +1,15 @@
-import Titulo from "./Titulo"
+import './App.css'
+import './index.css'
+import HelloWorld from './components/HelloWorld'
+import SayMyName from './components/SayMyName'
+import Pessoas from './components/Pessoas'
 
 function App(){
   return (
-    <div>
-      <Titulo cor='blue'/>
-      <Titulo cor='red'/>
+    <div className="App">
+      <p>
+      <HelloWorld/>
+      </p>
     </div>
   )
 }
