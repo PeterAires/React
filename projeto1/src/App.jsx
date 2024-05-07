@@ -1,15 +1,14 @@
 import './App.css'
 import './index.css'
-import HelloWorld from './components/HelloWorld'
-import SayMyName from './components/SayMyName'
-import Pessoas from './components/Pessoas'
+import Evento from './components/Evento'
+import Form from './components/Form'
 
 function App(){
   return (
     <div className="App">
-      <p>
-      <HelloWorld/>
-      </p>
+      <h1>Testando Eventos</h1>
+      <Evento/>
+      <Form/>
     </div>
   )
 }
