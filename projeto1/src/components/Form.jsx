@@ -15,7 +15,7 @@ function Form(){
             <div>
                 <label htmlFor="name" id="name" placeholder='Digite o seu nome'>name:</label>
                 <input type="text" placeholder="Digite o seu nome"
-                onChange={(event) => SetName(event.target.value)}
+                onChange={(event) => SetName(event.target.value)} //event, o evento de digitar na caixinha, a açao
                 /> 
             </div>
             <div>
