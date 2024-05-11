@@ -1,13 +1,15 @@
 import './App.css'
-import Condicional from './components/Condicional'
 import './index.css'
+import Numero1 from './components/calculadora/Numero1'
+import Numero2 from './components/calculadora/Numero2'
+import SinalMais from './components/calculadora/sinalMais'
 
 function App(){
   return (
     <div className="App">
-      <h1>Renderização por condições</h1>
-      <Condicional/>
-
+      <Numero1/>
+      <Numero2/>
+      <SinalMais/>
     </div>
   )
 }
