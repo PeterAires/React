@@ -1,15 +1,11 @@
 import './App.css'
 import './index.css'
-import Numero1 from './components/calculadora/Numero1'
-import Numero2 from './components/calculadora/Numero2'
-import SinalMais from './components/calculadora/sinalMais'
+import TreinoTres from './components/TreinoTres'
 
 function App(){
   return (
     <div className="App">
-      <Numero1/>
-      <Numero2/>
-      <SinalMais/>
+      <TreinoTres/>
     </div>
   )
 }
