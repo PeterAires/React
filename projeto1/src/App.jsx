@@ -1,11 +1,17 @@
 import './App.css'
+import OutraLista from './components/OutraLista'
 import './index.css'
-import TreinoTres from './components/TreinoTres'
+
 
 function App(){
+
+  const meusItens = ['react','Vue','Angualr']
+
   return (
     <div className="App">
-      <TreinoTres/>
+      <h1>renderização de listas</h1>
+      <OutraLista itens={meusItens}/>
+      <OutraLista itens={[]}/>
     </div>
   )
 }
