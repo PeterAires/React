@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Empresa from './pages/Empresa'
 import Contato from './pages/Contato'
 import Navbar from './components/Navbar'
-
+import Footer from './components/Footer'
 
 
 function App(){
@@ -29,6 +29,7 @@ function App(){
                 <Route path="/contato" element={<Contato />} />
                 <Route path="/empresa" element={<Empresa />} />
             </Routes>
+            <Footer/>
     </Router>
   )
 }
