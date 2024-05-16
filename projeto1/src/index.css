@@ -1,2 +1,5 @@
-body{background-color: aqua;}
-h2{color: blue; text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.616);}
+body{background-color:white;}
+
+.h1{text-align: center; padding: 40px; background-color: #1af3f762; border-radius:10px ;}
+
+.h2{text-align: center; background-color: #1af3f762; border-radius:10px ; padding: 20px;}
