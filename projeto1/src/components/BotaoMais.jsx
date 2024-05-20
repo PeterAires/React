@@ -10,7 +10,7 @@ function Botaomais(){
         <div className="areabotao">
             <button className="botaomais" onClick={(e) => setAcionar(true)}>Adicionar</button>
         {acionar&&(
-            <div className="adicionar"><h1><Botao props={setAcionar}/></h1></div>
+            <div className="adicionar"><h1><Botao setAcionar={setAcionar}/></h1></div>
         )}
         </div>
     )
