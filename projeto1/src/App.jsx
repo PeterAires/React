@@ -1,13 +1,14 @@
+import { useState } from 'react'
 import './index.css'
-import Botaomais from "./components/BotaoMais"
-
+import BotaoMais from './components/BotaoMais'
 function App(){
+  
   return (
     <div>
       <h1 className='h1'>Gerenciador de tarefas</h1>
-      <Botaomais/>
+      <BotaoMais/>
       <h2 className='h2'>Minhas Tarefas</h2>
-      <p></p>
+      <h3></h3>
     </div>
   )
 }
