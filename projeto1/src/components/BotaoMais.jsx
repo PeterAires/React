@@ -4,6 +4,7 @@ import App from "../App"
 
 function BotaoMais(){
 
+    //Para verificar se o botao adicionado foi clicado
     const [adicionar, setAdicionar] = useState()
 
     //o Titulo e a descrição

@@ -2,7 +2,7 @@ import './index.css'
 import BotaoMais from './components/BotaoMais'
 import Tarefa from './components/Tarefa'
 import { useState } from 'react'
-import TarefaDois from './components/TarefaDois'
+
 
 function App(){
   const [tituloApp,setTituloApp] = useState()
