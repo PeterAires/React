@@ -5,7 +5,7 @@ function Tarefa({titulo, descricao,setTituloApp,setDescricaoApp}){
     setTituloApp({titulo})
     return(
         <div>
-            {titulo}
+            {titulo} kakkaka
             {descricao}
         </div>
     )

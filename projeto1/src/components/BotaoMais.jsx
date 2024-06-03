@@ -1,6 +1,5 @@
 import { useState } from "react"
 import Tarefa from "./Tarefa"
-import App from "../App"
 
 function BotaoMais(){
 
