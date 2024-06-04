@@ -1,52 +1,41 @@
 import { useState } from "react"
-import Tarefa from "./Tarefa"
 
-function BotaoMais(){
+function BotaoMais({setTituloApp, setDescricaoApp, setFinalizar, setTarefa, Contagem}){
 
-    //Para verificar se o botao adicionado foi clicado
-    const [adicionar, setAdicionar] = useState()
+    const[fechar,setFechar] = useState()
+    const[adicionar,setAdicionar] = useState()
 
-    //o Titulo e a descrição
-    const [titulo, setTitulo] = useState()
-    const [descricao, setDescricao] = useState()
-
-    // o titulo e a descrição para a função Finalizar
-    const [Adicionada,setAdicionada] = useState()
+    function Adicionar(){
+        setAdicionar(true)
+    }
 
     function Finalizar(){
-        setAdicionada(true)
+        setFinalizar(true)
+        setTarefa(true)
+        Contagem = 1
+        for(let contador = 0; contador <1; contador++){
+        }
     }
 
     function Fechar(){
         setAdicionar(false)
-        setAdicionada(false)
-        setTitulo('')
-        setDescricao('')
+        setTituloApp('')
+        setDescricaoApp('')
+        setFinalizar(false)
     }
 
-
     return(
-        <div>
-            <button onClick={(e) => setAdicionar(true)}>Adicionar</button>
-    
-            {adicionar &&(
-                <div>
-                <input type="text" placeholder="Titulo" onChange={(e) => setTitulo(e.target.value)}/>
-
-                <input type="text" placeholder="Descrição" onChange={(e) => setDescricao(e.target.value)}/>
-
-                <button onClick={Finalizar}>Finalizar</button>
-                {Adicionada &&(
-                    <div><h4>Tarefa adicionada</h4></div>
-                )}
-
-                <button onClick={Fechar}>X</button>
-
-                <Tarefa titulo={titulo} descricao={descricao}/>
-                
-            </div>
-            )}
+        <div><button onClick={Adicionar}>Adicionar</button>
+        {adicionar &&(
+            <div>
+            <input type="text" placeholder="Titulo" onChange={(e) => setTituloApp(e.target.value)}/>
+            <input type="text" placeholder='Descrição' onChange={(e) => setDescricaoApp(e.target.value)}/>
+            <button onClick={Finalizar}>Finalizar</button>
+            <button onClick={Fechar}>Fechar</button>
         </div>
+        )}
+        </div>
+        
     )
 }
 export default BotaoMais
