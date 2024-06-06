@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-function BotaoMais({setTituloApp, setDescricaoApp, setFinalizar, setTarefa, Contagem}){
+function BotaoMais({setTituloApp, setDescricaoApp, setFinalizar, setTarefa, Contagem, Tarefas,TituloApp,DescricaoApp}){
 
-    const[fechar,setFechar] = useState()
+    
     const[adicionar,setAdicionar] = useState()
 
     function Adicionar(){
@@ -13,8 +13,8 @@ function BotaoMais({setTituloApp, setDescricaoApp, setFinalizar, setTarefa, Cont
         setFinalizar(true)
         setTarefa(true)
         Contagem = 1
-        for(let contador = 0; contador <1; contador++){
-        }
+        setAdicionar(false)
+        Tarefas.push(TituloApp,DescricaoApp)
     }
 
     function Fechar(){
