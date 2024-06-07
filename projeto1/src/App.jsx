@@ -24,7 +24,7 @@ function App(){
   }
 
   
-//retornamos tudo e no final utilizamos a função map
+//retornamos tudo e no final utilizamos a função map para mapear as tarefas
   return (
     <div>
       <h1>Gerenciador de tarefas</h1>
