@@ -1,38 +1,42 @@
 import './index.css'
-import BotaoMais from './components/BotaoMais'
 import { useState } from 'react'
 
 
 function App(){
-  const [tituloApp,setTituloApp] = useState()
-  const [descricaoApp,setDescricaoApp] = useState()
-  const [finalizar,setFinalizar] = useState()
-  const [tituloFinal,setTituloFinal] = useState()
-  const [Tarefa,setTarefa] = useState()
-  const contagem = 0
-  let tarefas = []
-  const listaTarefas = tarefas.map(
-    (t) => <p>{t}</p>
-  )
+  //dois useStates: um pega o que vc escreveu e o outro salva na lista do useState
 
+
+  const [valorEscrito,setValorEscrito] = useState('')
+  const [Tarefas,setTarefas] = useState([])
+
+  //primeiro passo: pegar o que a pessoa escreveu e mandar pro 'valorEscrito'
+  const valorDigitado = (e) => {
+    setValorEscrito(e.target.value)
+  }
+  
+//se no valor escrito nao tiver nada ele nao vai adicionar a lista,,,Spread operator, (adicionar elemento a lista),,,trim(remove os espaços em branco no inicio e fim),,,zerar o valor que esta salvo para evitar repetição de tarefas
+  function AdicionarTarefa(){
+    if (valorEscrito.trim() != ''){
+      setTarefas([...Tarefas, valorEscrito.trim()])
+      setValorEscrito('')
+    }
+    else{window.alert('Erro, não há nada digitado ou Esta tarefa ja foi Adicionada')}
+  }
+
+  
+//retornamos tudo e no final utilizamos a função map
   return (
     <div>
+      <h1>Gerenciador de tarefas</h1>
 
-      <h1 className='h1'>Gerenciador de tarefas</h1>
+      <input type="text" placeholder='Digite uma tarefa' onChange={valorDigitado} />
 
-        <BotaoMais setTituloApp={setTituloApp} setDescricaoApp={setDescricaoApp} setFinalizar={setFinalizar} setTarefa={setTarefa} Contagem={contagem} Tarefas={tarefas} tituloApp={tituloApp} descricaoApp={descricaoApp}/>
-
-      <h2 className='h2'>Minhas Tarefas</h2>
-
-      {finalizar &&(
-        <div>
-          {tarefas.push(tituloApp, descricaoApp)}
-          <h2>Tarefa adicionada</h2>
-        </div>
-      )}
-
-      {listaTarefas}
-
+      <button onClick={AdicionarTarefa}>Adicionar</button>
+      <ul>
+        {Tarefas.map((t) => (
+          <p>{t}</p>
+        ))}
+      </ul>
     </div>
   )
   
