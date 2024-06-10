@@ -15,7 +15,7 @@ function App(){
   function AdicionarTarefa(){
     if (Titulo.trim() != '' && Descricao.trim() != '' ){
       //crebei a cabeça aqui, mas depois de pensar um pouco era so criar outro array
-      const novaTarefa = [<h3>{Titulo}</h3>,<br/>,<h4>{Descricao}</h4>] 
+      const novaTarefa = [<h3>{Titulo}</h3>,<br/>,<h4>{Descricao} <button>X</button></h4>] 
       setTarefas([...Tarefas, novaTarefa])
       setTitulo('')
       setDescricao('')
@@ -41,7 +41,7 @@ function App(){
       <h2>Minhas tarefas</h2>
       <ul>
       
-       {Tarefas.map((t, c = 0) => (<div>{t} <button onClick={(c) => Excluir(Tarefas.c)}>X</button></div>)
+       {Tarefas.map((t, c = 0) => (<div>{t} </div>)
        )}
       </ul>
     </div>
