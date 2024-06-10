@@ -15,36 +15,45 @@ function App(){
   function AdicionarTarefa(){
     if (Titulo.trim() != '' && Descricao.trim() != '' ){
       //crebei a cabeça aqui, mas depois de pensar um pouco era so criar outro array
-      const novaTarefa = [<h3>{Titulo}</h3>,<br/>,<h4>{Descricao} <button>X</button></h4>] 
+      const novaTarefa = { Titulo, Descricao } 
       setTarefas([...Tarefas, novaTarefa])
       setTitulo('')
       setDescricao('')
+     
+    
     }
     else{window.alert('Erro, não há nada digitado ou Esta tarefa ja foi Adicionada')}
   }
-  function Excluir(c){
-    const remover = Tarefas.indexOf(Tarefas[c])
-    if (remover !== -1) {
-      Tarefas.splice(remover, 1);
-
-   }}
+  function Excluir(index){
+    const novasTarefas = [...Tarefas]
+    novasTarefas.splice(index,1)
+    setTarefas(novasTarefas)
+   }
 //retornamos tudo e no final utilizamos a função map para mapear as tarefas
   return (
-    <div>
-      <h1>Gerenciador de tarefas</h1>
+    
+      <div>
+        <h1>Gerenciador de tarefas</h1>
+  
+        <input type="text" placeholder='Titulo' value={Titulo}
+         onChange={(e) => setTitulo(e.target.value)} />
+  
+        <input type="text" placeholder='Descrição' value={Descricao} onChange={(e) => setDescricao(e.target.value)} />
+  
+        <button onClick={AdicionarTarefa}>Adicionar</button>
+        <h2>Minhas tarefas</h2>
+        
+         {Tarefas.map((tarefa, index) => (
+          
+            <div>
+              <h3>{tarefa.Titulo}</h3>
+              <p>{tarefa.Descricao}</p>
+              <button onClick={() => Excluir(index)}>X</button>
+            </div>
+          
+           ))}
 
-      <input type="text" placeholder='Titulo' onChange={(e) => setTitulo(e.target.value)} />
-
-      <input type="text" placeholder='Descrição' onChange={(e) => setDescricao(e.target.value)}/>
-
-      <button onClick={AdicionarTarefa}>Adicionar</button>
-      <h2>Minhas tarefas</h2>
-      <ul>
-      
-       {Tarefas.map((t, c = 0) => (<div>{t} </div>)
-       )}
-      </ul>
-    </div>
+      </div>
   )
 }
 export default App
