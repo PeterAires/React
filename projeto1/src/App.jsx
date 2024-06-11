@@ -22,7 +22,7 @@ function App(){
      
     
     }
-    else{window.alert('Erro, não há nada digitado ou Esta tarefa ja foi Adicionada')}
+    else{window.alert('Erro, não há nada digitado')}
   }
   //passamos o index que esta com o indice do array, depois copias o Tarefas em uma nova varialvel, utilizamos o metodo splice para atualizar o novasTarefas que esta com a compia do [Tarefas], colocamos o indice e a quantidade, depois setamos o Tarefas real pra copia agora com um excluido
   function Excluir(index){
@@ -37,19 +37,19 @@ function App(){
         <h1>Gerenciador de tarefas</h1>
   
         <input type="text" placeholder='Titulo' value={Titulo}
-         onChange={(e) => setTitulo(e.target.value)} />
-  
-        <input type="text" placeholder='Descrição' value={Descricao} onChange={(e) => setDescricao(e.target.value)} />
-  
-        <button onClick={AdicionarTarefa}>Adicionar</button>
+         onChange={(e) => setTitulo(e.target.value)} className='inputs' id='it1'/>
+        <br />
+        <input type="text" placeholder='Descrição' value={Descricao} onChange={(e) => setDescricao(e.target.value)} className='inputs' id='it2'/>
+        <br />
+        <button id='botaofinalizar' onClick={AdicionarTarefa}>Finalizar</button>
         <h2>Minhas tarefas</h2>
         
          {Tarefas.map((tarefa, index) => (
           
-            <div>
+            <div className='tarefa'>
+              <button onClick={() => Excluir(index)} id='botaoExcluir'>X</button>
               <h3>{tarefa.Titulo}</h3>
               <p>{tarefa.Descricao}</p>
-              <button onClick={() => Excluir(index)}>X</button>
             </div>
           
            ))}
