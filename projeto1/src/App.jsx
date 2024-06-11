@@ -14,7 +14,7 @@ function App(){
 //se no valor escrito nao tiver nada ele nao vai adicionar a lista,,,Spread operator, (adicionar elemento a lista),,,trim(remove os espaços em branco no inicio e fim),,,zerar o valor que esta salvo para evitar repetição de tarefas
   function AdicionarTarefa(){
     if (Titulo.trim() != '' && Descricao.trim() != '' ){
-      //crebei a cabeça aqui, mas depois de pensar um pouco era so criar outro array
+      //crebei a cabeça aqui, mas depois de pensar um pouco vi que poderia criar outro array, porem vi que nao era a melhor opçao, entao transformei eles em objetos para assesar (tarefa.titulo/descrição)
       const novaTarefa = { Titulo, Descricao } 
       setTarefas([...Tarefas, novaTarefa])
       setTitulo('')
@@ -24,6 +24,7 @@ function App(){
     }
     else{window.alert('Erro, não há nada digitado ou Esta tarefa ja foi Adicionada')}
   }
+  //passamos o index que esta com o indice do array, depois copias o Tarefas em uma nova varialvel, utilizamos o metodo splice para atualizar o novasTarefas que esta com a compia do [Tarefas], colocamos o indice e a quantidade, depois setamos o Tarefas real pra copia agora com um excluido
   function Excluir(index){
     const novasTarefas = [...Tarefas]
     novasTarefas.splice(index,1)
