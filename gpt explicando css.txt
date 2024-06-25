@@ -1,0 +1,157 @@
+Claro! Vamos explicar o CSS passo a passo:
+
+.display
+css
+Copiar código
+.display {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  width: 300px;
+  margin: 50px auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+display: grid;: Define que o elemento com classe .display será um grid container.
+grid-template-columns: repeat(4, 1fr);: Define 4 colunas no grid, cada uma com largura igual (1fr significa uma fração do espaço disponível).
+grid-template-rows: auto;: As linhas do grid se ajustam automaticamente ao conteúdo.
+gap: 10px;: Define um espaçamento de 10px entre as células do grid.
+padding: 20px;: Adiciona um preenchimento interno de 20px dentro do .display.
+background-color: #f0f0f0;: Define a cor de fundo como um tom de cinza claro.
+border-radius: 10px;: Arredonda os cantos do .display com um raio de 10px.
+width: 300px;: Define a largura do .display como 300px.
+margin: 50px auto;: Centraliza o .display horizontalmente na página com uma margem superior e inferior de 50px.
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);: Adiciona uma sombra leve para dar profundidade ao .display.
+.numero, .operador, .igual, .limpar
+css
+Copiar código
+.numero, .operador, .igual, .limpar {
+  grid-column: span 1;
+  grid-row: span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+grid-column: span 1; e grid-row: span 1;: Cada botão ocupa uma célula no grid.
+display: flex;, justify-content: center;, align-items: center;: Centraliza o conteúdo dos botões horizontal e verticalmente.
+background-color: #e0e0e0;: Define a cor de fundo dos botões.
+border: none;: Remove a borda dos botões.
+font-size: 24px;: Define o tamanho da fonte dos botões como 24 pixels.
+cursor: pointer;: Mostra o cursor como um ponteiro quando o usuário passa o mouse sobre os botões.
+transition: background-color 0.3s ease;: Adiciona uma transição suave de 0.3 segundos para a mudança de cor de fundo quando os botões são destacados (hover).
+.numero:hover, .operador:hover, .igual:hover, .limpar:hover
+css
+Copiar código
+.numero:hover, .operador:hover, .igual:hover, .limpar:hover {
+  background-color: #d0d0d0;
+}
+Define a cor de fundo dos botões quando o usuário passa o mouse sobre eles para um tom mais claro (#d0d0d0).
+.operador, .igual
+css
+Copiar código
+.operador, .igual {
+  background-color: #fcbf49;
+  color: white;
+}
+Define a cor de fundo e a cor do texto dos botões de operador (+, -, x, %) e do botão de igual (=).
+.operador:hover, .igual:hover
+css
+Copiar código
+.operador:hover, .igual:hover {
+  background-color: #fca311;
+}
+Define a cor de fundo dos botões de operador e igual quando o usuário passa o mouse sobre eles para um tom mais escuro (#fca311).
+.limpar
+css
+Copiar código
+.limpar {
+  background-color: #ea5455;
+}
+Define a cor de fundo do botão "C" (limpar) como um tom de vermelho (#ea5455).
+.limpar:hover
+css
+Copiar código
+.limpar:hover {
+  background-color: #ff6b6b;
+}
+Define a cor de fundo do botão "C" quando o usuário passa o mouse sobre ele para um tom mais escuro de vermelho (#ff6b6b).
+.visor
+css
+Copiar código
+.visor {
+  grid-column: span 4;
+  text-align: right;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 32px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+grid-column: span 4;: Ocupa todas as 4 colunas do grid.
+text-align: right;: Alinha o texto dentro do visor à direita.
+padding: 10px;: Adiciona um preenchimento interno de 10px dentro do visor.
+background-color: #ffffff;: Define a cor de fundo do visor como branco.
+border: 1px solid #ddd;: Adiciona uma borda sólida de 1px com uma cor cinza (#ddd).
+border-radius: 5px;: Arredonda os cantos do visor com um raio de 5px.
+font-size: 32px;: Define o tamanho da fonte dentro do visor como 32 pixels.
+margin-bottom: 10px;: Adiciona uma margem inferior de 10px abaixo do visor.
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);: Adiciona uma sombra leve ao visor para dar profundidade.
+.historico
+css
+Copiar código
+.historico {
+  grid-column: span 4;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  overflow-y: auto;
+  max-height: 200px;
+  margin-top: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+grid-column: span 4;: Ocupa todas as 4 colunas do grid.
+background-color: #ffffff;: Define a cor de fundo do histórico como branco.
+border: 1px solid #ddd;: Adiciona uma borda sólida de 1px com uma cor cinza (#ddd).
+border-radius: 5px;: Arredonda os cantos do histórico com um raio de 5px.
+padding: 10px;: Adiciona um preenchimento interno de 10px dentro do histórico.
+font-size: 16px;: Define o tamanho da fonte dentro do histórico como 16 pixels.
+overflow-y: auto;: Adiciona uma barra de rolagem vertical automática ao histórico se houver mais conteúdo do que o tamanho máximo especificado.
+max-height: 200px;: Define a altura máxima do histórico como 200 pixels.
+margin-top: 10px;: Adiciona uma margem superior de 10px acima do histórico.
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);: Adiciona uma sombra leve ao histórico para dar profundidade.
+.historico div
+css
+Copiar código
+.historico div {
+  margin-bottom: 5px;
+}
+Adiciona uma margem inferior de 5px entre cada item dentro do histórico.
+@media (max-width: 400px)
+css
+Copiar código
+@media (max-width: 400px) {
+  .display {
+    width: 250px;
+  }
+}
+Define regras de estilo específicas quando a largura da tela for igual ou inferior a 400 pixels.
+width: 250px;: Reduz a largura do .display para 250 pixels quando a tela for estreita, garantindo que a calculadora seja responsiva em dispositivos menores.
+Essas são as explicações detalhadas de cada parte do CSS que você forneceu para estilizar a calculadora em seu aplicativo React
+
+
+
+
