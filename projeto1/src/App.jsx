@@ -14,7 +14,7 @@ function App(){
 //se no valor escrito nao tiver nada ele nao vai adicionar a lista,,,Spread operator, (adicionar elemento a lista),,,trim(remove os espaços em branco no inicio e fim),,,zerar o valor que esta salvo para evitar repetição de tarefas
   function AdicionarTarefa(){
     if (Titulo.trim() != '' && Descricao.trim() != '' ){
-      //crebei a cabeça aqui, mas depois de pensar um pouco vi que poderia criar outro array, porem vi que nao era a melhor opçao, entao transformei eles em objetos para assesar (tarefa.titulo/descrição)
+      //crebei a cabeça aqui, mas depois de pensar um pouco vi que poderia criar outro array, porem vi que nao era a melhor opçao, entao transformei eles em objetos para assesar (tarefa.titulo/descrição)d
       const novaTarefa = { Titulo, Descricao } 
       setTarefas([...Tarefas, novaTarefa])
       setTitulo('')
